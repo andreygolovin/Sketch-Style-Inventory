@@ -108,9 +108,9 @@ com.getflourish.common = {
   addRectangleLayer: function (target) {
 
     var rect = NSMakeRect(0, 0, 200, 25)
-    var shape = [[MSRectangleShape alloc] init]
-    [shape setFrame:[MSRect rectWithRect:rect]]
-    var shapeGroup = [MSShapeGroup shapeWithPath:shape]
+    // var shape = [[MSRectangleShape alloc] init]
+    // [shape setFrame:[MSRect rectWithRect:rect]]
+    var shapeGroup = [MSShapeGroup shapeWithRect:rect]
     // var fill = [[shapeGroup style] addStylePartOfType:1]
     // var color = [MSColor colorWithNSColor:nsColor]
     // [fill setColor:color]
@@ -2435,7 +2435,7 @@ com.getflourish.textStyleInventory = {
       textLayer.adjustFrameToFit();
       textLayer.setTextAlignment(0);
 
-      textLayer.setStyle(definedTextStyle.textStyle.newInstance());
+      textLayer.setStyle(definedTextStyle.textStyle.style());
       textLayer.setTextAlignment(0);
       textLayer.setName(definedTextStyle.name);
       var theWidth = textLayer.frame()
